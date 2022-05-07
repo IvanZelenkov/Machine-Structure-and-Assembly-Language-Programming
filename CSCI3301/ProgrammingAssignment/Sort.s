@@ -20,8 +20,8 @@ PrintNumberMessage: .asciiz " "
 OutputResultArray: .asciiz "\nHere is the sorted list in ascending order: "
 EmptyArrayMessage: .asciiz "Error: empty array\n"
 
-.text # .textiiz  is the section where the code is located
-.globl main # .globl tells the assembler that the main symbol will be accessible from outside the current file
+.text 		# .textiiz  is the section where the code is located
+.globl main 	# .globl tells the assembler that the main symbol will be accessible from outside the current file
 
 main:
 	li $v0, 4			# print function name
