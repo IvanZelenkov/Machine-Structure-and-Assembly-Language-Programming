@@ -2,7 +2,8 @@
 # Author: Ivan Zelenkov
 # Creation Date: 05/07/2022
 
-.data # .data is the section where all variables are located
+# .data is the section where all variables are located
+.data
 
 # .align is used for the arrangement of data in memory, and specifically deals with 
 # the issue of accessing data as proper units of information from main memory
