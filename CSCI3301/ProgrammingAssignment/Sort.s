@@ -29,7 +29,7 @@ main:
 	syscall
 	
         li $v0, 4
-        la $a0, EnterArraySize  # message to input array size value
+        la $a0, EnterArraySize  	# message to input array size value
         syscall
 	li $v0, 5
 	syscall
@@ -46,7 +46,7 @@ main:
 inputNumber:
 	bge $t0, $s0, printSortThenPrint # if $t0.value >= array.length, then branch on done
 	li $v0, 4
-	la $a0, EnterIntegerMessage	 # message to enter a number
+	la $a0, EnterIntegerMessage	# message to enter a number
 	syscall
 	li $v0, 5
 	syscall
