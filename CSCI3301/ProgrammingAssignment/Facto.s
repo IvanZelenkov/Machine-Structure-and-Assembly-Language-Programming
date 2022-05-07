@@ -16,8 +16,8 @@ Result: .asciiz "Result: "
 NegativeNumberMessage: .asciiz  "Error: Negative value is not defined\n"
 BoundaryMessage: .asciiz "Error: Result is larger than 32 bits\n"
 
-.text	# .textiiz  is the section where the code is located
-.globl main # .globl tells the assembler that the main symbol will be accessible from outside the current file
+.text		# .textiiz  is the section where the code is located
+.globl main 	# .globl tells the assembler that the main symbol will be accessible from outside the current file
 
 main:
 	li $v0, 4             # print function name
