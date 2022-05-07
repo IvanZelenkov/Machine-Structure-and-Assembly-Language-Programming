@@ -23,13 +23,13 @@ EmptyArrayMessage: .asciiz "Error: empty array\n"
 .globl main # .globl tells the assembler that the main symbol will be accessible from outside the current file
 
 main:
-	li $v0, 4				# print function name
+	li $v0, 4			# print function name
 	la $a0, FunctionName	
 	syscall
 	
-    li $v0, 4
-    la $a0, EnterArraySize  # message to input array size value
-    syscall
+        li $v0, 4
+        la $a0, EnterArraySize  # message to input array size value
+        syscall
 	li $v0, 5
 	syscall
 	move $s0, $v0 			# get array size value
@@ -73,23 +73,23 @@ printSortThenPrint:
 	addi $s5, $s0, 1 		# get number of elements in array = array.length + 1
 
 	li $v0, 4
-	la $a0, OutputResultArray # output a sorted array of numbers
+	la $a0, OutputResultArray       # output a sorted array of numbers
 	syscall
 	jal printArray 			# jump to print ordered array
 
 	j exit 
 
 bubbleSort:
-	add $t0, $zero, $zero 	# initialize couter $t0 = 0
+	add $t0, $zero, $zero 	        # initialize couter $t0 = 0
 
 outerLoop:
 	addi $t0, $t0, 1 		# increment counter by 1
-	bgt $t0, $a1, endSort 	# if $t0 (counter) > $a1 (array.length), then branch to endSort
+	bgt $t0, $a1, endSort 	        # if $t0 (counter) > $a1 (array.length), then branch to endSort
 
 	add $t1, $a1, $zero		# assign array.length from $a1 to $t1 register
 
 innerLoop:
-	bge $t0, $t1, outerLoop # counter >= array.length
+	bge $t0, $t1, outerLoop         # counter >= array.length
 
 	addi $t1, $t1, -1 		# decrement array.length
 
@@ -100,12 +100,12 @@ innerLoop:
 	lw $t5, 0($t7)			# load value to register $t5 from table[j] cell
 	lw $t6, 0($t8)			# load value to register $t6 from table[j - 1] cell
 
-	bgt $t5, $t6, innerLoop	# if $t5 > $t6, then branch on innerLoop
+	bgt $t5, $t6, innerLoop	        # if $t5 > $t6, then branch on innerLoop
 
 swap:
 	sw $t5, 0($t8)			# otherwise, swap $t5 and $t6, so the predecessor is less than the successor
 	sw $t6, 0($t7)
-	j innerLoop				# jump to innerLoop to check next pair of elements
+	j innerLoop			# jump to innerLoop to check next pair of elements
 
 endSort:
 	jr $ra
@@ -119,7 +119,7 @@ printNumber:
 	li $v0, 1
 	syscall
 	li $v0, 4
-	la $a0, PrintNumberMessage # print number
+	la $a0, PrintNumberMessage      # print number
 	syscall
 	addi $t0, $t0, 4		# calculate address reg $t0 = i * 4
 	addi $t1, $t1, 1		# increment counter
@@ -128,12 +128,12 @@ printNumber:
 	jr $ra
 	
 IllegalArgumentException:
-	li $v0, 4				# print error message
+	li $v0, 4			# print error message
 	la $a0, EmptyArrayMessage	
 	syscall
 	
 	j exit
 	
 exit:
-	li $v0, 10				# exit
+	li $v0, 10			# exit
 	syscall
