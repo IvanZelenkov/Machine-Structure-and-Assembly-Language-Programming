@@ -1,6 +1,6 @@
 # Program Description: program sorts a set of given integers using the bubble sort algorithm.
 # Author: Ivan Zelenkov
-# Creation Date: 05/07/2022
+# Creation Date: 05/05/2022
 
 # .data is the section where all variables are located
 .data
